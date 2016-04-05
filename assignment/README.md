@@ -7,27 +7,17 @@ areas.
 
 ## Problem / Question
 
-Applications are ultimately just tools. What problem or question does
-your application attempt to resolve or grapple with? How does your
-application speak to this problem/question?
-
+I would like to create an application that allows users to explore and analyze vehicle crashes in Philadelphia more easily.
 
 ## The data
 
-Geospatial applications are all about working with data. What datasets
-would you plan/like to use? If the data you'll be working with isn't
-already stored in a way that you can use, how will you be storing your data?
-
+I will be using crash dataset on Open Data Philly: https://www.opendataphilly.org/dataset/vehicular-crash-data
+Other data sets such as census block group and street centerline are also available on Open Data Philly.
+I might create another geojson file for the buffer of street intersections.
 
 ## Technologies used
 
-Which technologies covered in class (or discovered on your own!) do you
-plan to use? How do you anticipate using each of these technologies?  
-
-Review the APIs/online examples of leaflet, turf, jQuery, underscore (or
-any library not explicitly covered in class) for functions/uses which
-you'd like to explore. Briefly describe how you might use them.
-
+I will be using most of the tools covered in this class: jQuery, underscore, CartoDB, turf.js, draw.js, etc.
 
 ## Design spec
 
@@ -35,29 +25,23 @@ you'd like to explore. Briefly describe how you might use them.
 
 At a high level, how do you expect people to use your application?
 - Who are the users?
+  While the target users are transportation planners at city government or private consultants who want to perform transportation safety analysis, the application can also inform general public about traffic safety of their neighborhoods.
 - What do they gain from your application' use?
+  This tool will allow transportation analysts perform transportation safety analysis more easily.
+  (The major benefit will be time saving).
 - Are there any website/application examples in the wild to which you can compare your final?
 
 #### Layouts and visual design
 
-So far, we've built all our applications with a side bar for
-representing non-map content and navigation. This is not the only
-successful design. Extra content could be displayed in a top bar,
-through modals, through side bars on both sides, and any combination of
-these as well as a number not mentioned. Try to describe your
-application's visual layout. Conceptually (no need for extensive CSS
-here), what will this design require?
-
+The layout of my application will be: map with a sidebar, follows by information dash boards at the bottom.
 
 ## Anticipated difficulties
 
-Thinking about weaknesses can be useful. What do you anticipate being
-most difficult about this project? How will you attempt to cope with
-these difficulties? For example, asynchronous behavior (ajax, events)
-are hard to use and think about. Global variables are a strategy for
-coping with that difficulty by breaking data out of the asynchronous
-context.
-
+- Dealing with queries from multiple datasets. Sometimes the CartoDB queries do not work properly when I have multiple datasets read in the application.
+- Re-Rendering polygon colors when user submit queries.
+- Redrawing crash points and polygons when users submit queries.
+- Summarizing crash info, such as crash density, listing most dangerous intersections or census tracts.
+- Transform geojson to turf featurecollection and then filter the original geojson base on the result obtained from turf.js analysis.
 
 ## Missing pieces
 
@@ -67,6 +51,3 @@ that you think would be useful? What technologies not covered seem exciting to
 you (you don't necessarily have to fully understand what they're for,
 this is a chance for you to get our help interpreting a technology's
 purpose/usage).
-
-
-
