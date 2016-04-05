@@ -33,6 +33,21 @@ body {
   overflow-y: auto;
 }
 
+ul{
+  padding:0;
+}
+
+li {
+  display:inline-block;
+  margin:10px;
+}
+
+button{
+  color: #444;
+  padding:4px;
+  border-radius: 5px;
+}
+
 #toggle-sidebar {
   position: absolute;
   right: 10px;
@@ -45,10 +60,32 @@ body {
   display: block;
 }
 
-@media screen and (min-width: 480px) and (max-width: 800px) {
+.sidebar-open > .sidebar{
+  display:block;
+  background-color: #fff;
+}
 
+@media screen and (min-width:480px){
+  #toggle-sidebar{
+    display:none;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 800px) {
+  .sidebar{
+    width:350px;
+  }
+  .map{
+    left:350px;
+  }
 }
 
 @media screen and (max-width: 479px) {
+  .sidebar{
+    display:none;
+  }
+  .map{
+    left:0;
+  }
 
 }
